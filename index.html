@@ -1,61 +1,238 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <title>Projects</title>
+    <style>
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .card-container {
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        .card-container:hover::before {
+            opacity: 1;
+        }
+        .card-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(121, 85, 220, 0.3), transparent 40%);
+            border-radius: 1rem;
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: -1;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-    <header class="main-header">
-        <h1>Our Projects</h1>
-    </header>
+<body class="bg-gray-100 font-sans p-4 sm:p-8">
 
-    <main class="container">
-        <section class="person-card" id="ayub-card">
-            <div class="card-header">
-                <img src="image/Umed.jpg" alt="Umed" class="card-image">
-                <h2>Umed</h2>
-            </div>
-            <div class="card-content">
-                <p>Home Page, Home Page v.2, Product Listings v.2, Product Listings v.3</p>
-                <button class="view-projects-btn" data-person="AYUB">Viev Projects</button>
-            </div>
-        </section>
+    <div id="tsparticles"></div>
 
-        <section class="person-card" id="umed-card">
-            <div class="card-header">
-                <img src="image/Abdullo.jpg" alt="Abdullo" class="card-image">
-                <h2>Abdullo</h2>
-            </div>
-            <div class="card-content">
-                <p>About Page, About Page v.2, Product Listing, Product Listing v.2</p>
-                <button class="view-projects-btn" data-person="UMED">Viev Projects</button>
-            </div>
-        </section>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
 
-        <section class="person-card" id="ismoil-card">
-            <div class="card-header">
-                <img src="image/Idiboy.jpg" alt="Idiboy" class="card-image">
-                <h2>Idiboy</h2>
-            </div>
-            <div class="card-content">
-                <p>Shoping baskets, Shoping baskets v.2</p>
-                <button class="view-projects-btn" data-person="ISMOIL">Viev Projects</button>
-            </div>
-        </section>
-    </main>
+           <div class="card-container reveal-on-scroll" style="transition-delay: 300ms;">
+            <a href="./Umed/Home Page/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Right Image.png" alt="Home Page" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Home Page</h1>
+                </div>
+            </a>
+        </div>
 
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h3 id="modal-title"></h3>
-            <div id="project-list" class="project-grid">
-            </div>
+        <div class="card-container reveal-on-scroll" style="transition-delay: 100ms;">
+            <a href="./Umed/Home Page v.2/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./b062f355fa9b27255272d76e665cce4314b4aedb.jpg" alt="Home Page v.2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Home Page v.2</h1>
+                </div>
+            </a>
+        </div>
+
+        <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="./Umed/Product Listings v.2/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Parent.png" alt="Product Listings v.2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Product Listings v.2</h1>
+                </div>
+            </a>
+        </div>
+        <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="Umed/Product Listings v.3/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Ima.png" alt="Product Listings v.3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Product Listings v.3</h1>
+                </div>
+            </a>
+        </div>
+        <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="./Abdullo/About Page v.2/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Image Block.png" alt="About Page v.2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">About Page v.2</h1>
+                </div>
+            </a>
+        </div>
+        <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="./Abdullo/About Page/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Image (1).png" alt="About Page" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">About Page</h1>
+                </div>
+            </a>
+        </div>
+        <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="./Abdullo/Product Listing v.2/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Image Left.png" alt="Product Listing v.2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Product Listing v.2</h1>
+                </div>
+            </a>
+        </div>
+        <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="./Abdullo/Product Listing/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Parent (1).png" alt="Product Listing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Product Listing</h1>
+                </div>
+            </a>
+        </div>
+
+        <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="./Idiboy/Shopping baskets/index.html" target="_blank" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Product Image.png" alt="Shopping baskets" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Shopping baskets</h1>
+                </div>
+            </a>
+        </div>
+
+        <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="./Idiboy/Shopping baskets v.2/index.html" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Product Image (1).png" alt="Shopping baskets v.2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">     
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Shopping baskets v.2</h1>
+                </div>
+            </a>
+        </div>
+                <div class="card-container reveal-on-scroll" style="transition-delay: 200ms;">
+            <a href="./Idiboy/Product Listings/index.html" 
+               class="group data-tilt bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+               data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="h-64 overflow-hidden">
+                    <img src="./Page Headers.png" alt="Product Listings" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6 text-center flex-grow flex flex-col justify-center">     
+                    <h1 class="text-2xl font-semibold text-gray-800 transition-transform duration-300 group-hover:-translate-y-2">Product Listings</h1>
+                </div>
+            </a>
         </div>
     </div>
 
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            tsParticles.load("tsparticles", {
+                fullScreen: { enable: false },
+                background: { color: "#1a1a2e" },
+                particles: {
+                    number: { value: 160, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.8, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+                    size: { value: 2, random: true },
+                    move: { enable: true, speed: 0.5, direction: "none", random: true, straight: false, out_mode: "out" }
+                },
+                interactivity: { events: { onhover: { enable: false }, onclick: { enable: false } } },
+                retina_detect: true
+            });
+
+            document.querySelectorAll('.card-container').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                    card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            document.querySelectorAll('.reveal-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
+
+
