@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Our Projects</h1>
+    </header>
+
+    <main class="container">
+        <section class="person-card" id="ayub-card">
+            <div class="card-header">
+                <img src="image/Umed.jpg" alt="Umed" class="card-image">
+                <h2>Umed</h2>
+            </div>
+            <div class="card-content">
+                <p>Home Page, Home Page v.2, Product Listings v.2, Product Listings v.3</p>
+                <button class="view-projects-btn" data-person="AYUB">Viev Projects</button>
+            </div>
+        </section>
+
+        <section class="person-card" id="umed-card">
+            <div class="card-header">
+                <img src="image/Abdullo.jpg" alt="Abdullo" class="card-image">
+                <h2>Abdullo</h2>
+            </div>
+            <div class="card-content">
+                <p>About Page, About Page v.2, Product Listing, Product Listing v.2</p>
+                <button class="view-projects-btn" data-person="UMED">Viev Projects</button>
+            </div>
+        </section>
+
+        <section class="person-card" id="ismoil-card">
+            <div class="card-header">
+                <img src="image/Idiboy.jpg" alt="Idiboy" class="card-image">
+                <h2>Idiboy</h2>
+            </div>
+            <div class="card-content">
+                <p>Shoping baskets, Shoping baskets v.2</p>
+                <button class="view-projects-btn" data-person="ISMOIL">Viev Projects</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div id="project-list" class="project-grid">
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
